@@ -1,0 +1,202 @@
+$dimension_10_negative : -0.655vw;
+$dimension_10 : 0.655vw;
+$dimension_13 : 0.85vw; //1px = 0.065; 2px = 0.13
+$dimension_15 : 0.98vw;
+$dimension_16 : 1.045vw;
+$dimension_18 : 1.175vw;
+$dimension_20 : 1.305vw;
+$dimension_22 : 1.435vw;
+$dimension_24 : 1.565vw;
+$dimension_30 : 1.955vw;
+$dimension_32 : 2.085vw;
+$background_color : #f75322;
+$text_color : #EE2C14;
+
+.auth {
+   .title-auth {
+      width: 80%;
+      margin: auto;
+      display: flex;
+      padding: $dimension_20 0px;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      div {
+         display: flex;
+         gap: $dimension_10;
+         align-items: flex-end;
+
+         span:nth-child(2) {
+            color: $text_color;
+            font-size: $dimension_10*2.2;
+            font-weight: 500;
+         }
+
+         span:last-child {
+            color: rgba(0, 0, 0, 0.9);
+            font-size: $dimension_10*2.2;
+            font-weight: 400;
+         }
+
+         i {
+            color: $background_color;
+            font-size: $dimension_13*3;
+            margin-bottom: $dimension_10*0.65;
+         }
+      }
+
+      .support {
+         font-size: $dimension_13*1.1;
+         color: $text_color;
+         font-weight: 400;
+      }
+   }
+
+   // end title
+
+   .body {
+      //height: 38vw;
+      display: flex;
+      background-image: linear-gradient(#ED4D2B, #F25D25);
+      padding: 0px 15%;
+      gap: $dimension_10*2;
+
+      .left {
+         flex: 3;
+         display: flex;
+         justify-content: center;
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            margin: auto;
+         }
+
+      }
+
+      .right {
+         flex: 2;
+         background-color: white;
+         border-radius: $dimension_10*0.3;
+         margin: $dimension_20*3 $dimension_30;
+
+         form {
+            margin: $dimension_10*2 $dimension_10*3;
+            display: flex;
+            flex-direction: column;
+            gap: $dimension_10*0.8;
+            max-height: 15vw;
+
+            .title {
+               font-size: $dimension_22;
+               color: rgba(0, 0, 0, 0.7);
+               font-weight: 500;
+               text-align: center;
+            }
+
+            .field {
+               width: 100%;
+               padding: $dimension_13*0.9 $dimension_20;
+               display: inline-block;
+               border: 1px solid #ccc;
+               border-radius: 2px;
+               box-sizing: border-box;
+               font-size: $dimension_15*0.9;
+               margin-top: $dimension_10*2;
+            }
+
+            .form-control {
+               height: 65px;
+               padding: 8px 12px;
+               border: 1px solid #ccc;
+               border-radius: 3px;
+               outline: none;
+               font-size: 16px;
+               margin-top: $dimension_10*2;
+               color: #666;
+            }
+
+            .error {
+               color: #ED4D2B;
+               font-size: 16px;
+            }
+
+            input[type=submit] {
+               width: 100%;
+               background-color: #ed4e2bba;
+               color: white;
+               padding: $dimension_13*0.9 $dimension_20;
+               border: none;
+               border-radius: 2px;
+               cursor: pointer;
+               font-size: $dimension_15;
+               margin-top: $dimension_10*2;
+
+               &:hover {
+                  background-color: #ed4e2bbb;
+               }
+            }
+
+            .forgot {
+               display: flex;
+               justify-content: space-between;
+               color: rgb(0, 54, 161);
+               font-size: $dimension_13*0.9;
+            }
+
+            .strike {
+               display: block;
+               text-align: center;
+               overflow: hidden;
+               white-space: nowrap;
+
+               &>span {
+                  position: relative;
+                  display: inline-block;
+                  font-size: $dimension_13;
+                  color: rgba(128, 128, 128, 0.651);
+
+                  &:before,
+                  &:after {
+                     content: "";
+                     position: absolute;
+                     top: 50%;
+                     width: $dimension_10*15;
+                     height: 0.8px;
+                     background: rgba(128, 128, 128, 0.216);
+                  }
+
+                  &::before {
+                     right: 100%;
+                     margin-right: $dimension_15;
+                  }
+
+                  &::after {
+                     left: 100%;
+                     margin-left: $dimension_15;
+                  }
+               }
+
+            }
+
+            .advise {
+               margin-top: $dimension_10;
+               font-size: $dimension_13;
+               color: rgba(128, 128, 128, 0.6);
+               display: flex;
+               gap: $dimension_10*0.7;
+               justify-content: center;
+
+               span:last-child {
+                  color: $text_color;
+                  font-weight: 500;
+               }
+            }
+
+         }
+
+         //end form
+      }
+   }
+}
