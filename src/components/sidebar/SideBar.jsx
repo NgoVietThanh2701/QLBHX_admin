@@ -59,20 +59,32 @@ const Sidebar = () => {
                      <span>Type</span>
                   </li>
                </NavLink>
-               <NavLink to="/admin/notify">
+               <NavLink to="/admin/staff">
                   <li>
                      <PersonOutlineOutlinedIcon className='icon' />
-                     <span>User</span>
+                     <span>Staff</span>
                   </li>
                </NavLink>
+               <NavLink to="/admin/customer">
+                  <li>
+                     <PersonOutlineOutlinedIcon className='icon' />
+                     <span>Customer</span>
+                  </li>
+               </NavLink>
+               {admin&&admin.role==='admin'&&<NavLink to="/admin/manager">
+                  <li>
+                     <PersonOutlineOutlinedIcon className='icon' />
+                     <span>Manager</span>
+                  </li>
+               </NavLink>}
                <p className="title">USEFUL</p>
-               <NavLink to="/admin/notify">
+               <NavLink to="/admin/order">
                   <li>
                      <NotificationsActiveOutlinedIcon className='icon' />
-                     <span>Request</span>
+                     <span>Đơn hàng</span>
                   </li>
                </NavLink>
-            
+
                <p className="title">USER</p>
                <NavLink to="/admin/profile">
                   <li>
@@ -80,6 +92,7 @@ const Sidebar = () => {
                      <span>Profile</span>
                   </li>
                </NavLink>
+               
                <li>
                   <LocalShippingOutlinedIcon className='icon' />
                   <span onClick={logout}>Logout</span>

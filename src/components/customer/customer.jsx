@@ -4,26 +4,26 @@ import DataTable from '../dataTable/DataTable';
 import axios from 'axios';
 import { useSelector } from 'react-redux'
 
-const Category = () => {
+const Customer = () => {
 
-   const [category, setCategory] = useState([]);
+   const [customer, setCustomer] = useState([]);
 
    const { admin } = useSelector((state) => state.auth);
 
    // get category
-   const getCategory = async () => {
-      const response = await axios.get('http://localhost:5000/admin/category');
-      setCategory(response.data);
+   const getCustomer = async () => {
+      const response = await axios.get('http://localhost:5000/admin/customer');
+      setCustomer(response.data);
    }
 
    useEffect(() => {
-      getCategory();
+    getCustomer();
    }, []);
 
    //delete
-   const deleteCategory = async (codeCategory) => {
-      await axios.delete(`http://localhost:5000/admin/category/${codeCategory}`);
-      getCategory();
+   const deleteCustomer = async (codeCustomer) => {
+      await axios.delete(`http://localhost:5000/admin/customer/${codeCustomer}`);
+      getCustomer();
    }
 
    const actionColumn = [
@@ -34,19 +34,19 @@ const Category = () => {
          renderCell: (params) => {
             return (
                <div className='cellAction'>
-                  <Link to={`${params.row.uuid}`} >
+                  <Link to='' >
                      <div className='viewButton'>View</div>
                   </Link>
-                     {admin && admin.role ==='admin' && <div>
+                   <div>
                         <div className='updateButton'>
                           update
                         </div>
-                     </div>}
-                     {admin && admin.role ==='admin' &&
-                        <div onClick={() => deleteCategory(params.row.codeCategory)}>
+                     </div>
+                     
+                        <div onClick={() => deleteCustomer(params.row.codeCustomer)}>
                            <div className='deleteButton'>Delete</div>
                         </div>
-                     }
+                     
                </div >
             )
          }
@@ -55,29 +55,44 @@ const Category = () => {
 
    return (
         <DataTable
-            userRows={category}
+            userRows={customer}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Danh mục"
+            title="Danh sách khách hàng"
             link_new="./new"
-            isAddNew={admin.role === 'admin'?true:false}
+            isAddNew={true}
         />
    )
 }
 
-export default Category;
+export default Customer;
 
 const userColumns = [
    { field: "id", headerName: "ID", width: 60 },
-   {field: "codeCategory", headerName: "Mã danh mục", width: 300},
+   {field: "codeCustomer", headerName: "Mã khách hàng", width: 200},
    {
       field: "name",
-      headerName: "Danh mục",
-      width: 250,
+      headerName: "Tên",
+      width: 150,
    },
+   {
+    field: "email",
+    headerName: "Email",
+    width: 70,
+    },
+    {
+        field: "phone",
+        headerName: "Sđt",
+        width: 70,
+    },
+   {
+    field: "address",
+    headerName: "Địa chỉ",
+    width: 200,
+    },
    {
       field: "createdAt",
       headerName: "Thời gian",
-      width: 250,
+      width: 100,
    },
 ];

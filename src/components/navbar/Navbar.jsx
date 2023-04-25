@@ -7,8 +7,11 @@ import FullscreenExitOutlinedIcon from '@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
 import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
 import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+
+   const { admin } = useSelector((state) => state.auth);
  
     return (
        <div className='navbar'>
@@ -40,8 +43,9 @@ const Navbar = () => {
                    <ListOutlinedIcon className='icon' />
                 </div>
                 <div className="item" style={{ fontWeight: 700 }}>
+                  {admin && admin.name}
                   <img
-                     src='../images/avatar.jpg'
+                     src='./avatar.jpg'
                      alt=''
                      className='avatar' />
                </div>

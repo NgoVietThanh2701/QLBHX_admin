@@ -52,14 +52,14 @@ const Login = () => {
                         <input type="password" className='field' placeholder="Mật khẩu" value={password}
                             onChange={(e) => setPassword(e.target.value)}/>
                         <select class='form-control' value={port_cn} onChange={(e) => setPort(e.target.value)}>
-                            <option>---Tỉnh/Thành phố</option>
+                            <option hidden >--- Chi nhánh</option>
                             <option value='3435'>Đà nẵng</option>
                             <option value='3436'>Hồ chí Mình</option>
                             <option value='3437'>Hà Nội</option>
                         </select>
                         {isError && <span class='error'>{message}</span>}
                         {isLoading ?
-                        <img className='image-loading' src="../images/loading.gif" alt='' />:
+                       <img className='image-loading' src="../images/loading.gif" alt='' />:
                              <input type="submit" value='Đăng nhập' />
                         }
                         <div className='forgot'>

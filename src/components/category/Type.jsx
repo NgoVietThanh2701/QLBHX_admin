@@ -4,26 +4,27 @@ import DataTable from '../dataTable/DataTable';
 import axios from 'axios';
 import { useSelector } from 'react-redux'
 
-const Category = () => {
+const Type = () => {
 
-   const [category, setCategory] = useState([]);
+   const [type, setType] = useState([]);
 
    const { admin } = useSelector((state) => state.auth);
 
-   // get category
-   const getCategory = async () => {
-      const response = await axios.get('http://localhost:5000/admin/category');
-      setCategory(response.data);
+   // get type
+   const getType = async () => {
+      const response = await axios.get('http://localhost:5000/admin/type');
+      setType(response.data);
    }
 
    useEffect(() => {
-      getCategory();
+    getType();
    }, []);
 
+
    //delete
-   const deleteCategory = async (codeCategory) => {
-      await axios.delete(`http://localhost:5000/admin/category/${codeCategory}`);
-      getCategory();
+   const deleteType = async (codeType) => {
+      await axios.delete(`http://localhost:5000/admin/type/${codeType}`);
+      getType();
    }
 
    const actionColumn = [
@@ -43,7 +44,7 @@ const Category = () => {
                         </div>
                      </div>}
                      {admin && admin.role ==='admin' &&
-                        <div onClick={() => deleteCategory(params.row.codeCategory)}>
+                        <div onClick={() => deleteType(params.row.codeType)}>
                            <div className='deleteButton'>Delete</div>
                         </div>
                      }
@@ -55,25 +56,29 @@ const Category = () => {
 
    return (
         <DataTable
-            userRows={category}
+            userRows={type}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Danh mục"
-            link_new="./new"
-            isAddNew={admin.role === 'admin'?true:false}
+            title="Loại sản phẩm"
+            isAddNew={admin.role==='admin'?true:false}
         />
    )
 }
 
-export default Category;
+export default Type;
 
 const userColumns = [
    { field: "id", headerName: "ID", width: 60 },
-   {field: "codeCategory", headerName: "Mã danh mục", width: 300},
+   {field: "codeType", headerName: "Mã danh mục", width: 300},
    {
       field: "name",
       headerName: "Danh mục",
-      width: 250,
+      width: 100,
+   },
+   {
+    field: "categoryID",
+    headerName: "Danh mục",
+    width: 250
    },
    {
       field: "createdAt",
