@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/home/Home'
 import Login from './pages/login/Login';
 import Type from './components/category/Type';
@@ -11,6 +11,7 @@ import Customer from './components/customer/customer';
 import Manager from './components/manager/manager';
 import Order from './components/order/Order';
 import OrderDetail from './components/order/OrderDetail';
+import Dashboard from './components/dashboard/Dashboard';
 
 function App() {
   return (
@@ -18,7 +19,7 @@ function App() {
        <BrowserRouter>
           <Routes>
             <Route path='/admin'>
-              <Route index element={<Home main={"text"} />}/>
+              <Route index element={<Home main={ <Dashboard/>} />}/>
               <Route path='login' element={<Login/>}/>
               <Route path='category'>
                   <Route index element={<Home main={ <Category/> }/>}/>
