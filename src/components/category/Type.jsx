@@ -72,13 +72,13 @@ const userColumns = [
    {field: "codeType", headerName: "Mã danh mục", width: 300},
    {
       field: "name",
-      headerName: "Danh mục",
-      width: 100,
+      headerName: "Loại sản phẩm",
+      width: 180,
    },
    {
     field: "categoryID",
     headerName: "Danh mục",
-    width: 250
+    width: 130
    },
    {
       field: "createdAt",

@@ -84,7 +84,12 @@ const Sidebar = () => {
                      <span>Đơn hàng</span>
                   </li>
                </NavLink>
-
+               <NavLink to="/admin/warehouse">
+                  <li>
+                     <NotificationsActiveOutlinedIcon className='icon' />
+                     <span>Kho</span>
+                  </li>
+               </NavLink>
                <p className="title">USER</p>
                <NavLink to="/admin/profile">
                   <li>

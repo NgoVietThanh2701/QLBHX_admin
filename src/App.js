@@ -12,6 +12,7 @@ import Manager from './components/manager/manager';
 import Order from './components/order/Order';
 import OrderDetail from './components/order/OrderDetail';
 import Dashboard from './components/dashboard/Dashboard';
+import Warehouse from './components/warehouse/Warehouse';
 
 function App() {
   return (
@@ -48,6 +49,9 @@ function App() {
               <Route path='order'>
                   <Route index element={<Home main={ <Order/> }/>}/>
                   <Route path='detail/:id' element={ <Home main={<OrderDetail />}/>}/>
+              </Route>
+              <Route path='warehouse'>
+                  <Route index element={<Home main={ <Warehouse/> }/>}/>
               </Route>
             </Route>
           </Routes>

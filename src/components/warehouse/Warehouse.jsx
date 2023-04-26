@@ -4,26 +4,26 @@ import DataTable from '../dataTable/DataTable';
 import axios from 'axios';
 import { useSelector } from 'react-redux'
 
-const Manager = () => {
+const Warehouse = () => {
 
-   const [manager, setManager] = useState([]);
+   const [warehouse, setWarehouse] = useState([]);
 
    const { admin } = useSelector((state) => state.auth);
 
    // get category
-   const getManager = async () => {
-      const response = await axios.get('http://localhost:5000/admin/manager');
-      setManager(response.data);
+   const getWarehouse = async () => {
+      const response = await axios.get('http://localhost:5000/admin/warehouse');
+      setWarehouse(response.data);
    }
 
    useEffect(() => {
-    getManager();
+    getWarehouse();
    }, []);
 
    //delete
-   const deleteManager = async (codeManager) => {
-      await axios.delete(`http://localhost:5000/admin/manager/${codeManager}`);
-      getManager();
+   const deleteWarehouse = async (codeWarehouse) => {
+      await axios.delete(`http://localhost:5000/admin/warehouse/${codeWarehouse}`);
+      getWarehouse();
    }
 
    const actionColumn = [
@@ -34,19 +34,17 @@ const Manager = () => {
          renderCell: (params) => {
             return (
                <div className='cellAction'>
-                  <Link to='' >
+                  <Link to=''>
                      <div className='viewButton'>View</div>
                   </Link>
-                   <div>
+                     <div>
                         <div className='updateButton'>
                           update
                         </div>
                      </div>
-                     
-                        <div onClick={() => deleteManager(params.row.codeManager)}>
+                        <div onClick={() => deleteWarehouse(params.row.codeStaff)}>
                            <div className='deleteButton'>Delete</div>
                         </div>
-                     
                </div >
             )
          }
@@ -55,41 +53,45 @@ const Manager = () => {
 
    const userColumns = [
     { field: "id", headerName: "ID", width: 60 },
-    {field: "codeManager", headerName: "Mã quản lý", width: 200},
+    {field: "codeWH", headerName: "Mã kho", width: 200},
     {
        field: "name",
        headerName: "Tên",
        width: 150,
     },
     {
-     field: "email",
-     headerName: "Email",
+     field: "address",
+     headerName: "Địa chỉ",
      width: 200,
      },
      {
-         field: "role",
-         headerName: "Chức vụ",
+         field: "codeBranch",
+         headerName: "Chi nhánh",
          width: 150,
-     },
-   {
-        field: "codeBranch",
-        headerName: "Chi nhánh",
-        width: 150,
-     },
- 
+      },
+    {
+       field: "createdAt",
+       headerName: "Thời gian",
+       width: 100,
+    },
  ];
+ 
 
    return (
         <DataTable
-            userRows={manager}
+            userRows={warehouse}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Danh sách quản lý"
+            title="Danh sách Kho"
             link_new="./new"
             isAddNew={true}
         />
    )
+
+   
 }
 
-export default Manager;
 
+
+
+export default Warehouse;

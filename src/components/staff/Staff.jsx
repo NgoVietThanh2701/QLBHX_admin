@@ -69,7 +69,7 @@ const Staff = () => {
          headerName: "Lương",
          width: 70,
      },
-     admin.role==='admin'&&{
+   {
          field: "codeBranch",
          headerName: "Chi nhánh",
          width: 150,

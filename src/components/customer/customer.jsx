@@ -8,8 +8,6 @@ const Customer = () => {
 
    const [customer, setCustomer] = useState([]);
 
-   const { admin } = useSelector((state) => state.auth);
-
    // get category
    const getCustomer = async () => {
       const response = await axios.get('http://localhost:5000/admin/customer');
@@ -73,17 +71,17 @@ const userColumns = [
    {
       field: "name",
       headerName: "Tên",
-      width: 150,
+      width: 130,
    },
    {
     field: "email",
     headerName: "Email",
-    width: 70,
+    width: 200,
     },
     {
         field: "phone",
         headerName: "Sđt",
-        width: 70,
+        width: 130,
     },
    {
     field: "address",
