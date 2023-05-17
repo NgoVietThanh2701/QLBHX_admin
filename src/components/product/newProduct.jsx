@@ -9,7 +9,7 @@ const NewProduct = () => {
 
    const navigate = useNavigate();
 
-   const [file, setFile] = useState("");
+   const [files, setFiles] = useState([]);
    const [name, setName] = useState("");
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
@@ -41,17 +41,18 @@ const NewProduct = () => {
    const saveProduct = async (event) => {
       // stopping reload page when submit
       event.preventDefault();
+      console.log("--"+files)
       const formData = new FormData();
       formData.append("name", name);
       formData.append("description", description);
       formData.append("price", price);
       formData.append("discount", discount);
-      formData.append("file", file);
+      formData.append("images", files);
       formData.append("stock", stock);
       formData.append("warehouseID", warehouse);
       formData.append("typeID", type);
       try {
-        if (file === '' || file===null) {
+        if (files === '' || files === null) {
             setMessage("Vui lòng chọn ảnh");
          }else if (name === '') {
             setMessage("Vui lòng nhập tên sản phẩm!");
@@ -89,19 +90,24 @@ const NewProduct = () => {
             </div>
             <div className="bottom-new">
                <div className="left">
-                  <img
-                     src={file ? URL.createObjectURL(file) : "../../images/no-image.webp"}
-                     alt="" />
+                  {/* {
+                     files.map((file) => {
+                        <img
+                        src={file ? URL.createObjectURL(file) : "../../images/no-image.webp"}
+                        alt="" />
+                     })
+                  } */}
                </div>
                <div className="right">
                   <form onSubmit={saveProduct}>
                      <div className="formInput">
                         <label htmlFor='file'>
-                           Image: <DriveFolderUploadOutlined className='icon' />
+                           Images: <DriveFolderUploadOutlined className='icon' />
                         </label>
                         <input type="file" id='file'
-                           style={{ display: "none" }}
-                           onChange={e => setFile(e.target.files[0])} />
+                              style={{ display: "none" }}
+                              multiple
+                              onChange={e => setFiles(e.target.files)} />
                      </div>
                      <div className="formInput">
                         <label>Name</label>
