@@ -1,0 +1,128 @@
+.type {
+    height : 570px;
+    padding: 4px;
+    margin: 8px 12px;
+
+    .title {
+        width          : 100%;
+        font-size      : 24px;
+        color          : rgba(0, 0, 0, 0.7);
+        margin-bottom  : 20px;
+        margin-left    : 5px;
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+
+        .link {
+            color           : green;
+            font-size       : 16px;
+            font-weight     : 500;
+            border          : 1px solid green;
+            padding         : 5px;
+            border-radius   : 3px;
+            cursor          : pointer;
+        }
+    }
+
+    //modal
+
+    .modal-type {
+        display         : flex;
+        justify-content : center;
+        align-items     : center;
+        position        : fixed;
+        z-index         : 10;
+        top             : 0;
+        left            : 0;
+        width           : 100%;
+        height          : 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+
+        .modal-content-type {
+            width           : 600px;
+            margin-bottom   : 200px;
+            background-color: white;
+            padding         : 16px 30px;
+            border-radius   : 3px;
+
+            .new-type-title {
+                font-size    : 20px;
+                margin-bottom: 15px;
+                color        : rgba(0, 0, 0, 0.8);
+            }
+
+                .formInput {
+                    display      : flex;
+                    gap          : 20px;
+                    align-items  : center;
+                    width        : 100%;
+                    margin-bottom: 22px;
+
+                    label {
+                        width        : 110px;
+                        color        : rgba(0, 0, 0, 0.7);
+                        font-weight  : 500;
+                        font-size: 14px;
+                        gap          : 150px;
+                    }
+
+                    input {
+                        flex         : 1;
+                        padding      : 10px;
+                        font-weight  : 500;
+                        border       : 1px solid #999;
+                        color        :rgba(0, 0, 0, 0.75);
+                        border-radius: 3px;
+                        font-size: 14px;
+                    }
+                }
+
+                .form-select {
+                    flex         : 1;
+                    height       : 38px;
+                    padding      : 4px 8px;
+                    border       : 1px solid #999;
+                    border-radius: 3px;
+                    outline      : none;
+                    font-size    : 14px;
+                    color        :rgba(0, 0, 0, 0.75);
+                    appearance: none;
+
+                    .option {
+                        color    : rgba(0, 0, 0, 0.75);
+                        font-size: 14px;
+                    }
+                }
+
+                .form-btn {
+                    margin-top: 10px;
+                    display        : flex;
+                    justify-content: flex-end;
+                    align-items: center;
+
+                    .category-btn-add {
+                        width           : 70px;
+                        padding         : 4px 6px;
+                        border          : none;
+                        border-radius   : 2px;
+                        background-color: rgba(0, 139, 51, 0.619);
+                        color           : white;
+                        font-size       : 16px;
+                        cursor          : pointer;
+                        margin-right    : 8px;
+                    }
+
+                    .category-btn-cancle {
+                        width           : 70px;
+                        padding         : 4px 6px;
+                        border          : none;
+                        border-radius   : 2px;
+                        background-color: rgba(215, 41, 18, 0.649);
+                        color           : white;
+                        font-size       : 16px;
+                        cursor          : pointer;
+                    }
+                }
+        }
+    }
+}

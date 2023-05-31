@@ -85,10 +85,10 @@ const NewProduct = () => {
 
    return (
         <div>
-            <div className="top-new">
+            <div className="new-product-title">
                Thêm sản phẩm
             </div>
-            <div className="bottom-new">
+            <div className="new-product-body">
                <div className="left">
                   {/* {
                      files.map((file) => {

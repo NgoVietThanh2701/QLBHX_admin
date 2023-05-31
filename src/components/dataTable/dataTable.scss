@@ -1,72 +1,44 @@
-.data-table {
-    height: 570px;
-    padding: 10px;
- 
-    .data-table-title {
-       width: 100%;
-       font-size: 24px;
-       color: gray;
-       margin-bottom: 20px;
-       margin-left: 10px;
-       display: flex;
-       align-items: center;
-       justify-content: space-between;
- 
-       .link {
-          text-decoration: none;
-          color: green;
-          font-size: 16px;
-          font-weight: 400;
-          border: 1px solid green;
-          padding: 5px;
-          border-radius: 5px;
-          cursor: pointer;
-          margin-right: 15px;
-          margin-top: 5px;
-       }
-    }
- 
-    .cellWithImg {
-       display: flex;
-       align-items: center;
- 
-       .cellImg {
-          padding: 10px;
-          width: 65px;
-          height: 65px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-right: 10px;
-       }
-    }
- 
-    .cellAction {
-       display: flex;
-       align-items: center;
-       gap: 10%;
- 
-       .viewButton {
-          padding: 2px 5px;
-          border-radius: 5px;
-          color: darkblue;
-          border: 1px dotted rgba(0, 0, 139, 0.384);
-          cursor: pointer;
-       }
- 
-       .updateButton {
-          padding: 2px 5px;
-          border-radius: 5px;
-          color: rgb(0, 139, 37);
-          border: 1px dotted rgba(0, 139, 56, 0.966);
-          cursor: pointer;
-       }
- 
-       .deleteButton {
-          padding: 2px 5px;
-          border-radius: 5px;
-          color: crimson;
-          border: 1px dotted rgba(198, 2, 38, 0.867);
-          cursor: pointer;
-       }
-    }
+
+.cellWithImg {
+   display: flex;
+   align-items: center;
+
+   .cellImg {
+     padding: 4px;
+     max-width: 65px;
+     min-width: 60px;
+     height: 60px;
+     border-radius: 50%;
+     object-fit: cover;
+   }
+ }
+
+ .cellAction {
+   display: flex;
+   align-items: center;
+   gap: 10%;
+
+   .viewButton {
+     padding: 3px 6px;
+     border-radius: 3px;
+     color: darkblue;
+     border: 1px dotted rgba(0, 0, 139, 0.384);
+     cursor: pointer;
+   }
+
+   .updateButton {
+     padding: 3px 6px;
+     border-radius: 3px;
+     color: green;
+     border: 1px dotted green;
+     cursor: pointer;
+   }
+
+   .deleteButton {
+     padding: 3px 6px;
+     border-radius: 3px;
+     color: red;
+     border: 1px dotted red;
+     cursor: pointer;
+   }
  }

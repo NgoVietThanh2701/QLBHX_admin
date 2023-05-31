@@ -2,8 +2,9 @@ import React, { useState, useEffect }  from 'react'
 import { Link } from 'react-router-dom'
 import './login.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { loginAdmin, reset  } from '../../features/authSlice';
+import login from '../../images/background.jpg';
 
 const Login = () => {
 
@@ -42,7 +43,7 @@ const Login = () => {
             </div>
             <div className="body">
                <div className="left">
-                  <img src='../images/background.jpg' alt='' />
+                  <img src={login} alt='' />
                </div>
                <div className="right">
                      <form onSubmit={Auth}>
