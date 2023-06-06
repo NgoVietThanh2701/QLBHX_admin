@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import DataTable from '../dataTable/DataTable';
 import axios from 'axios';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import '../type/type.scss';
 
 const Customer = () => {
 
@@ -52,14 +53,17 @@ const Customer = () => {
    ]
 
    return (
-        <DataTable
-            userRows={customer}
-            userColumns={userColumns}
-            actionColumn={actionColumn}
-            title="Danh sách khách hàng"
-            link_new="./new"
-            isAddNew={true}
-        />
+      <div className="type">
+          <div className='title'>
+            Danh sách khách hàng
+            <button className='link'>Add new</button>
+         </div>
+         <DataTable
+               userRows={customer}
+               userColumns={userColumns}
+               actionColumn={actionColumn}
+         />
+        </div>
    )
 }
 

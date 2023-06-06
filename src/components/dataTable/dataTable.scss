@@ -1,4 +1,4 @@
-
+@import "../../App.scss"; 
 .cellWithImg {
    display: flex;
    align-items: center;
@@ -29,16 +29,16 @@
    .updateButton {
      padding: 3px 6px;
      border-radius: 3px;
-     color: green;
-     border: 1px dotted green;
+     color: $btn-color-1;
+     border: 1px dotted $btn-color-1;
      cursor: pointer;
    }
 
    .deleteButton {
      padding: 3px 6px;
      border-radius: 3px;
-     color: red;
-     border: 1px dotted red;
+     color: $btn-color-2;
+     border: 1px dotted $btn-color-2;
      cursor: pointer;
    }
  }

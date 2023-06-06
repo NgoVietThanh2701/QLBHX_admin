@@ -71,23 +71,32 @@ const Manager = () => {
          headerName: "Chức vụ",
          width: 150,
      },
-   {
-        field: "codeBranch",
-        headerName: "Chi nhánh",
-        width: 150,
-     },
- 
+     {
+      field: "codeBranch",
+      headerName: "Chi nhánh",
+      width: 150,
+      renderCell: (params) => {
+         return (
+            <div>
+               {params.row.Branch.name}
+            </div>
+         )
+      }
+   },
  ];
 
    return (
-        <DataTable
+      <div className="type">
+      <div className='title'>
+        Danh sách quản lý
+        <button className='link'>Add new</button>
+     </div>
+     <DataTable
             userRows={manager}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Danh sách quản lý"
-            link_new="./new"
-            isAddNew={true}
         />
+    </div>
    )
 }
 

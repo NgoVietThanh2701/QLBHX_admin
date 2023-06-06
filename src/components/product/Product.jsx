@@ -226,6 +226,15 @@ const Product = () => {
       setSubPro("");
    }
 
+   function onDelete(e, indexPro) {
+      e.preventDefault();
+      setProperties(prePros => {
+         const newPros = [...prePros];
+         newPros.splice(indexPro, 1);
+         return newPros;
+      });
+   }
+
    function closePro(e) {
       e.preventDefault();
       setSelectedPro(null);
@@ -368,7 +377,8 @@ const Product = () => {
                                                    ))}
                                                 </ul>
                                              </div>
-                                             <div className='btn-add' onClick={(e) => openPro(e,property)}><EditOutlinedIcon/></div>
+                                             <div className='btn-add' onClick={(e) => openPro(e, property)}><EditOutlinedIcon/></div>
+                                             <div className='btn-add' onClick={(e) => onDelete(e, index)}><CloseIcon/></div>
                                          </div>
                                        </li>
                                     ))}

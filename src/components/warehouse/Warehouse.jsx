@@ -65,10 +65,17 @@ const Warehouse = () => {
      width: 200,
      },
      {
-         field: "codeBranch",
-         headerName: "Chi nhánh",
-         width: 150,
-      },
+      field: "codeBranch",
+      headerName: "Chi nhánh",
+      width: 150,
+      renderCell: (params) => {
+         return (
+            <div>
+               {params.row.Branch.name}
+            </div>
+         )
+      }
+   },
     {
        field: "createdAt",
        headerName: "Thời gian",
@@ -78,20 +85,18 @@ const Warehouse = () => {
  
 
    return (
-        <DataTable
+      <div className="type">
+         <div className='title'>
+            Danh sách kho
+            <button className='link'>Add new</button>
+         </div>
+         <DataTable
             userRows={warehouse}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Danh sách Kho"
-            link_new="./new"
-            isAddNew={true}
         />
+      </div>
    )
-
-   
 }
-
-
-
 
 export default Warehouse;

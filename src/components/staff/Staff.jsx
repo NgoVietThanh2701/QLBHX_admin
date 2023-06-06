@@ -2,7 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import DataTable from '../dataTable/DataTable';
 import axios from 'axios';
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
+import '../type/type.scss';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Staff = () => {
 
@@ -73,6 +76,13 @@ const Staff = () => {
          field: "codeBranch",
          headerName: "Chi nhánh",
          width: 150,
+         renderCell: (params) => {
+            return (
+               <div>
+                  {params.row.Branch.name}
+               </div>
+            )
+         }
       },
     {
        field: "createdAt",
@@ -83,20 +93,18 @@ const Staff = () => {
  
 
    return (
-        <DataTable
+      <div className="type">
+          <div className='title'>
+            Danh sách nhân viên
+            <button className='link'>Add new</button>
+         </div>
+          <DataTable
             userRows={staff}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Danh sách nhân viên"
-            link_new="./new"
-            isAddNew={true}
         />
+      </div>
    )
-
-   
 }
-
-
-
 
 export default Staff;

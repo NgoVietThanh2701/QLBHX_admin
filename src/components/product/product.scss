@@ -1,3 +1,4 @@
+@import "../../App.scss"; 
 .product{
     height: 570px;
     padding: 4px;
@@ -6,7 +7,7 @@
     .title {
         width: 100%;
         font-size: 24px;
-        color: rgba(0, 0, 0, 0.7);
+        color: $primary-text;
         margin-bottom  : 20px;
         margin-left    : 5px;
         display: flex;
@@ -14,14 +15,7 @@
         justify-content: space-between;
  
        .link {
-            color           : green;
-            font-size       : 16px;
-            font-weight     : 500;
-            border          : 1px solid green;
-            padding         : 5px;
-            margin-right: 5px;
-            border-radius   : 3px;
-            cursor          : pointer;
+           @include link;
        }
     }
 
@@ -50,7 +44,7 @@
           .product-title {
             font-size: 20px;
             margin-bottom: 15px;
-            color: rgba(0, 0, 0, 0.8);
+            color: $primary-text;
           }
 
           .column-container {
@@ -108,10 +102,18 @@
                         .btn-add {
                             cursor: pointer;
                             color:#999;
+                            position: absolute;
+                            right: 24px;
+                            z-index: 1;
+                        }
+
+                        .btn-add:last-child {
+                            right: 0;
                         }
                     }
 
                     label {
+                        color: $primary-text;
                         display: block;
                         margin-bottom: 6px;
                     }
@@ -163,7 +165,7 @@
                 padding         : 4px 6px;
                 border          : none;
                 border-radius   : 2px;
-                background-color: rgba(0, 139, 51, 0.619);
+                background-color: $background-color-1;
                 color           : white;
                 font-size       : 16px;
                 cursor          : pointer;
@@ -176,7 +178,7 @@
                 padding         : 4px 6px;
                 border          : none;
                 border-radius   : 2px;
-                background-color: rgba(215, 41, 18, 0.8);
+                background-color: $background-color-2;
                 color           : white;
                 font-size       : 16px;
                 cursor          : pointer;
