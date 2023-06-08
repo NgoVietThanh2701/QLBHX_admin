@@ -3,9 +3,7 @@ import DataTable from '../dataTable/DataTable';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
-import CloseIcon from '@mui/icons-material/Close';
-import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
+import "./product.scss";
 
 const Product = () => {
    const [products, setProducts] = useState([])
@@ -377,8 +375,8 @@ const Product = () => {
                                                    ))}
                                                 </ul>
                                              </div>
-                                             <div className='btn-add' onClick={(e) => openPro(e, property)}><EditOutlinedIcon/></div>
-                                             <div className='btn-add' onClick={(e) => onDelete(e, index)}><CloseIcon/></div>
+                                             <div className='btn-add' onClick={(e) => openPro(e, property)}><ion-icon name="add-outline"></ion-icon></div>
+                                             <div className='btn-add' onClick={(e) => onDelete(e, index)}><ion-icon name="close-outline"></ion-icon></div>
                                          </div>
                                        </li>
                                     ))}
@@ -387,8 +385,8 @@ const Product = () => {
                                     <div className="add-content">
                                        <p>Thêm phân loại cho "{selectedPro.name}"</p>
                                        <input type="text" value={subPro} onChange={(e) => setSubPro(e.target.value)} />
-                                       <button className='btn-add-sub' onClick={addSubPro}><CheckOutlinedIcon/></button>
-                                       <button className='btn-add-sub' onClick={closePro}><CloseIcon/></button>
+                                       <button className='btn-add-sub' onClick={addSubPro}><ion-icon name="checkmark-outline"></ion-icon></button>
+                                       <button className='btn-add-sub' onClick={closePro}><ion-icon name="close-outline"></ion-icon></button>
                                     </div>
                                  )}
                               </div>

@@ -4,7 +4,6 @@ import Login from './pages/login/Login';
 import Type from './components/type/Type';
 import Category from './components/category/Category.jsx';
 import Product from './components/product/Product';
-import NewProduct from './components/product/newProduct';
 import Staff from './components/staff/Staff';
 import Customer from './components/customer/customer';
 import Manager from './components/manager/manager';
@@ -29,19 +28,15 @@ function App() {
               </Route>
               <Route path='staff'>
                   <Route index element={<Home main={ <Staff/> }/>}/>
-                  {/* <Route path=':id' element={}/> */}
               </Route>
               <Route path='customer'>
                   <Route index element={<Home main={ <Customer/> }/>}/>
-                  {/* <Route path=':id' element={}/> */}
               </Route>
               <Route path='manager'>
                   <Route index element={<Home main={ <Manager/> }/>}/>
-                  {/* <Route path=':id' element={}/> */}
               </Route>
               <Route path='product'>
                 <Route index element={<Home main={<Product/>}/>}/>
-                <Route path='new' element={ <Home main={<NewProduct/>} />} />
               </Route>
               <Route path='order'>
                   <Route index element={<Home main={ <Order/> }/>}/>

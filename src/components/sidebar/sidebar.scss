@@ -1,4 +1,5 @@
-$color_primary : #7451f8;
+@import "../../App.scss";
+$color_primary : #888;
 
 .sidebar {
    flex: 1;
@@ -15,7 +16,7 @@ $color_primary : #7451f8;
       .logo {
          font-size: 25px;
          font-weight: bold;
-         color: $color_primary;
+         color: $primary-color;
       }
    }
 
@@ -34,8 +35,8 @@ $color_primary : #7451f8;
       }
 
       .title {
-         font-size: 12px;
-         font-weight: bold;
+         font-size: 13px;
+         font-weight: 500;
          color: #999;
          margin-top: 15px;
          margin-bottom: 5px;
@@ -51,14 +52,12 @@ $color_primary : #7451f8;
             background-color: #ece8ff;
          }
 
-         .icon {
+         ion-icon {
             font-size: 18px;
-            color: $color_primary;
-         }
+          }
 
          span {
             font-size: 15px;
-            font-weight: 600;
             color: #888;
             margin-left: 10px;
          }

@@ -1,12 +1,5 @@
 import React from 'react'
 import "./sidebar.scss"
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
-import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
-import CreditCardOutlinedIcon from '@mui/icons-material/CreditCardOutlined';
-import LocalShippingOutlinedIcon from '@mui/icons-material/LocalShippingOutlined';
-import NotificationsActiveOutlinedIcon from '@mui/icons-material/NotificationsActiveOutlined';
-import SettingsIcon from '@mui/icons-material/Settings';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { logOutAdmin, reset } from '../../features/authSlice';
@@ -36,70 +29,69 @@ const Sidebar = () => {
                <p className="title">MAIN</p>
                <NavLink to="/admin">
                   <li>
-                     <DashboardIcon className='icon' />
+                  <ion-icon name="home-outline"></ion-icon>
                      <span>Dashboard</span>
                   </li>
                </NavLink>
                <p className="title">LIST</p>
                <NavLink to="/admin/product">
                   <li>
-                     <StoreOutlinedIcon className='icon' />
+                  <ion-icon name="file-tray-outline"></ion-icon>
                      <span>Products</span>
                   </li>
                </NavLink>
                <NavLink to="/admin/category">
                   <li>
-                     <PersonOutlineOutlinedIcon className='icon' />
+                  <ion-icon name="bag-handle-outline"></ion-icon>
                      <span>Category</span>
                   </li>
                </NavLink>
                <NavLink to="/admin/type">
                   <li>
-                     <CreditCardOutlinedIcon className='icon' />
+                  <ion-icon name="copy-outline"></ion-icon>
                      <span>Type</span>
                   </li>
                </NavLink>
                <NavLink to="/admin/staff">
                   <li>
-                     <PersonOutlineOutlinedIcon className='icon' />
+                  <ion-icon name="person-outline"></ion-icon>
                      <span>Staff</span>
                   </li>
                </NavLink>
                <NavLink to="/admin/customer">
                   <li>
-                     <PersonOutlineOutlinedIcon className='icon' />
+                  <ion-icon name="person-add-outline"></ion-icon>
                      <span>Customer</span>
                   </li>
                </NavLink>
                {admin&&admin.role==='admin'&&<NavLink to="/admin/manager">
                   <li>
-                     <PersonOutlineOutlinedIcon className='icon' />
+                  <ion-icon name="person-add-outline"></ion-icon>
                      <span>Manager</span>
                   </li>
                </NavLink>}
                <p className="title">USEFUL</p>
                <NavLink to="/admin/order">
                   <li>
-                     <NotificationsActiveOutlinedIcon className='icon' />
+                  <ion-icon name="notifications-outline"></ion-icon>
                      <span>Đơn hàng</span>
                   </li>
                </NavLink>
                <NavLink to="/admin/warehouse">
                   <li>
-                     <NotificationsActiveOutlinedIcon className='icon' />
+                  <ion-icon name="server-outline"></ion-icon>
                      <span>Kho</span>
                   </li>
                </NavLink>
                <p className="title">USER</p>
                <NavLink to="/admin/profile">
                   <li>
-                     <NotificationsActiveOutlinedIcon className='icon' />
+                  <ion-icon name="person-circle-outline"></ion-icon>
                      <span>Profile</span>
                   </li>
                </NavLink>
-               
                <li>
-                  <LocalShippingOutlinedIcon className='icon' />
+               <ion-icon name="trending-up-outline"></ion-icon>
                   <span onClick={logout}>Logout</span>
                </li>
             </ul>

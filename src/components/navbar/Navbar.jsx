@@ -1,12 +1,5 @@
 import React from 'react'
 import "./navbar.scss"
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import LanguageOutlinedIcon from '@mui/icons-material/LanguageOutlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
-import FullscreenExitOutlinedIcon from '@mui/icons-material/FullscreenExitOutlined';
-import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-import ChatBubbleOutlineOutlinedIcon from '@mui/icons-material/ChatBubbleOutlineOutlined';
-import ListOutlinedIcon from '@mui/icons-material/ListOutlined';
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
@@ -18,34 +11,34 @@ const Navbar = () => {
           <div className="wrapper">
              <div className="search">
                 <input type="text" placeholder='Search...' />
-                <SearchOutlinedIcon />
+                <ion-icon name="search-outline"></ion-icon>
              </div>
              <div className="items">
                 <div className="item">
-                   <LanguageOutlinedIcon className='icon' />
+                  <ion-icon name="earth-outline"></ion-icon>
                    English
                 </div>
                 <div className="item">
-                   <DarkModeOutlinedIcon className='icon' />
+                  <ion-icon name="moon-outline"></ion-icon>
                 </div>
                 <div className="item">
-                   <FullscreenExitOutlinedIcon className='icon' />
+                  <ion-icon name="scan-outline"></ion-icon>
                 </div>
                 <div className="item">
-                   <NotificationsNoneOutlinedIcon className='icon' />
+                  <ion-icon name="notifications-outline"></ion-icon>
                    <div className="counter">1</div>
                 </div>
                 <div className="item">
-                   <ChatBubbleOutlineOutlinedIcon className='icon' />
+                  <ion-icon name="chatbox-outline"></ion-icon>
                    <div className="counter">1</div>
                 </div>
                 <div className="item">
-                   <ListOutlinedIcon className='icon' />
+                <ion-icon name="settings-outline"></ion-icon>
                 </div>
-                <div className="item" style={{ fontWeight: 700 }}>
+                <div className="item">
                   {admin && admin.name}
                   <img
-                     src='./avatar.jpg'
+                     src='../images/logo.jpg'
                      alt=''
                      className='avatar' />
                </div>
