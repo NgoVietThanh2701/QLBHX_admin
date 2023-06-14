@@ -51,18 +51,45 @@ const OrderDetail = () => {
     { field: "id", headerName: "ID", width: 60 },
     {
      field: "orderID",
-     headerName: "Phương thức",
+     headerName: "ID đơn hàng",
      width: 100,
+     renderCell: (params) => {
+      return (
+         <div>
+            {params.row.Order.id}
+         </div>
+      )
+     }
      },
      {
          field: "productID",
          headerName: "Sản phẩm",
          width: 140,
+         renderCell: (params) => {
+            return (
+               <div className='cellWithImg'>
+                  <img className="cellImg" src={params.row.Product.PhotoProducts[0].url} alt="avatar" width={200}/>
+                  {params.row.Product.name}
+               </div>
+            )
+         }
      },
      {
          field: "quantity",
          headerName: "Số lượng",
          width: 150,
+      },
+      {
+         field: "price",
+         headerName: "Đơn giá",
+         width: 160,
+         renderCell: (params) => {
+            return (
+               <div>
+                  {params.row.Product.price}
+               </div>
+            )
+         }
       },
       {
         field: "total_price",
@@ -78,14 +105,19 @@ const OrderDetail = () => {
  
 
    return (
-        <DataTable
+
+      <div className="type">
+      <div className='title'>
+         Chi tiết đơn đặt hàng
+         <button className='link'>Add new</button>
+      </div>
+      <DataTable
             userRows={orderDetail}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Chi tiết đơn hàng"
-            link_new="."
-            isAddNew={false}
         />
+    </div>
+
    )
 
    

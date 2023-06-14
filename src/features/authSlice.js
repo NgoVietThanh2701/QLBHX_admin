@@ -11,6 +11,9 @@ const initialState = {
 
 export const loginAdmin = createAsyncThunk("admin/loginAdmin", async (admin, thunkAPI) => {
    try {
+      if(admin.port_cn === 0 && admin.email !== "admin@gmail.com") {
+         return thunkAPI.rejectWithValue("Vui lòng chọn chi nhánh phù hợp");
+      }
       const response = await axios.post('http://localhost:5000/admin/login', {
          email: admin.email,
          password: admin.password,

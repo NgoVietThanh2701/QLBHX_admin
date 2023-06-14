@@ -38,7 +38,7 @@ const Navbar = () => {
                 <div className="item">
                   {admin && admin.name}
                   <img
-                     src='../images/logo.jpg'
+                     src='/images/logo.jpg'
                      alt=''
                      className='avatar' />
                </div>

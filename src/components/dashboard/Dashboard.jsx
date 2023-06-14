@@ -24,7 +24,7 @@ const Dashboard = () => {
      }
      let total_order=0;
      for(const value of order) {
-        total_order +=value.total
+        total_order +=value.totalMoney
      }
 
   

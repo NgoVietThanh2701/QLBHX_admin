@@ -50,55 +50,82 @@ const Order = () => {
          }
       }
    ]
-
-   const userColumns = [
-    { field: "id", headerName: "ID", width: 60 },
-    {field: "customerID", headerName: "Khách hàng", width: 120},
-   {
-       field: "codeBranch",
-       headerName: "Chi nhánh",
-       width: 150,
-    },
-    {
-     field: "method",
-     headerName: "Phương thức",
-     width: 150,
-     },
-     {
-         field: "status",
-         headerName: "Trạng thái",
-         width: 70,
-     },
-     {
-         field: "total",
-         headerName: "Tổng tiền",
-         width: 150,
-      },
-      {
-        field: "note",
-        headerName: "Ghi chú",
-        width: 160,
-     },
-    {
-       field: "createdAt",
-       headerName: "Thời gian",
-       width: 160,
-    },
- ];
  
 
    return (
-        <DataTable
+
+      <div className="type">
+         <div className='title'>
+            Danh sách đơn đặt hàng
+            <button className='link'>Add new</button>
+         </div>
+         <DataTable
             userRows={order}
             userColumns={userColumns}
             actionColumn={actionColumn}
-            title="Danh sách đặt hàng"
-            link_new="."
-            isAddNew={false}
         />
+       </div>
    )
 
    
 }
 
 export default Order;
+
+const userColumns = [
+   { field: "id", headerName: "ID", width: 60 },
+   {
+      field: "customerID", headerName: "Khách hàng", width: 120,
+      renderCell: (params)  => {
+         return (
+            <div>
+               {params.row.Customer.name}
+            </div>
+         )
+      }
+   
+   }
+   ,
+  {
+      field: "codeBranch",
+      headerName: "Chi nhánh",
+      width: 100,
+      renderCell: (params) => {
+        return (
+           <div>
+              {params.row.Branch.name}
+           </div>
+        )
+      }
+   },
+   {
+    field: "method",
+    headerName: "Phương thức",
+    width: 150,
+    },
+    {
+        field: "status",
+        headerName: "Trạng thái",
+        width: 70,
+    },
+    {
+        field: "totalMoney",
+        headerName: "Tổng tiền",
+        width: 120,
+     },
+     {
+      field: "costShip",
+      headerName: "Phi Ship",
+      width: 80,
+   },
+     {
+       field: "note",
+       headerName: "Ghi chú",
+       width: 160,
+    },
+   {
+      field: "createdAt",
+      headerName: "Thời gian",
+      width: 160,
+   },
+];
